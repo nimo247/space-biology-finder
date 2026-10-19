@@ -1,0 +1,401 @@
+{
+  "evaluation_type": "development",
+  "catalog_sha256": "92403417d1a60c330bcb339e3b1587a07b7d180afdd0a9f5caca0b6059851d36",
+  "catalog_studies": 60,
+  "limitations": [
+    "Questions use studies already reviewed during development.",
+    "Positive relevance judgments are incomplete.",
+    "Unjudged results are not automatically considered irrelevant.",
+    "These checks do not establish general search accuracy.",
+    "Study-level evidence does not verify sample-to-assay linkage."
+  ],
+  "summary": {
+    "development_checks_passed": 15,
+    "development_checks_total": 15,
+    "retrieval_questions": 11,
+    "known_positive_hits_at_5": 11,
+    "known_positive_hit_rate_at_5": 1.0,
+    "known_positive_mrr_at_5": 1.0,
+    "input_handling_checks_passed": 4,
+    "input_handling_checks_total": 4
+  },
+  "cases": [
+    {
+      "id": "mouse_liver",
+      "query": "How does spaceflight affect mouse liver?",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-209",
+        "OSD-137"
+      ],
+      "effective_filters": {
+        "organism": "Mus musculus",
+        "tissue": "Liver"
+      },
+      "requirements": {
+        "post_return": false,
+        "gene_expression": false
+      },
+      "reviewed_relevant_ids": [
+        "OSD-137",
+        "OSD-209"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-915",
+        "OSD-250"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.818
+    },
+    {
+      "id": "mouse_liver_gene_expression",
+      "query": "Find gene expression datasets from mice liver",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-137"
+      ],
+      "effective_filters": {
+        "organism": "Mus musculus",
+        "tissue": "Liver"
+      },
+      "requirements": {
+        "post_return": false,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-137"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-209",
+        "OSD-915"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.28
+    },
+    {
+      "id": "post_return_gene_activity",
+      "query": "What happens to gene activity after returning to Earth?",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-915",
+        "OSD-613",
+        "OSD-515",
+        "OSD-666",
+        "OSD-464"
+      ],
+      "effective_filters": {
+        "organism": null,
+        "tissue": null
+      },
+      "requirements": {
+        "post_return": true,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-613",
+        "OSD-915"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-175",
+        "OSD-37",
+        "OSD-147"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.203
+    },
+    {
+      "id": "post_return_mouse_lung",
+      "query": "Find mouse lung gene expression datasets after returning to Earth",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-915"
+      ],
+      "effective_filters": {
+        "organism": "Mus musculus",
+        "tissue": "Lung"
+      },
+      "requirements": {
+        "post_return": true,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-915"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-137",
+        "OSD-209"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.278
+    },
+    {
+      "id": "post_return_mouse_thymus",
+      "query": "Find mouse thymus gene expression datasets after returning to Earth",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-515"
+      ],
+      "effective_filters": {
+        "organism": "Mus musculus",
+        "tissue": "thymus"
+      },
+      "requirements": {
+        "post_return": true,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-515"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-915",
+        "OSD-137"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.257
+    },
+    {
+      "id": "post_return_mouse_quadriceps",
+      "query": "Find RNA-seq datasets from mouse right quadriceps femoris after returning to Earth",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-666"
+      ],
+      "effective_filters": {
+        "organism": "Mus musculus",
+        "tissue": "Right quadriceps femoris"
+      },
+      "requirements": {
+        "post_return": true,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-666"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-515",
+        "OSD-915"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.377
+    },
+    {
+      "id": "soleus_recovery",
+      "query": "Find RNA-seq studies of recovery in mouse soleus",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-295",
+        "OSD-228"
+      ],
+      "effective_filters": {
+        "organism": "Mus musculus",
+        "tissue": "Soleus"
+      },
+      "requirements": {
+        "post_return": false,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-295"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-137",
+        "OSD-209"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.195
+    },
+    {
+      "id": "arabidopsis_seedlings",
+      "query": "Find gene expression datasets from Arabidopsis seedlings in space",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-321",
+        "OSD-37"
+      ],
+      "effective_filters": {
+        "organism": "Arabidopsis thaliana",
+        "tissue": "Seedlings"
+      },
+      "requirements": {
+        "post_return": false,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-37",
+        "OSD-321"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-16",
+        "OSD-137"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.199
+    },
+    {
+      "id": "human_parabolic_flight",
+      "query": "Find human U937 gene expression datasets from parabolic flight",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-283",
+        "OSD-56",
+        "OSD-92",
+        "OSD-541",
+        "OSD-787"
+      ],
+      "effective_filters": {
+        "organism": "Homo sapiens",
+        "tissue": null
+      },
+      "requirements": {
+        "post_return": false,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-283"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-137",
+        "OSD-915"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.209
+    },
+    {
+      "id": "human_alpha_radiation",
+      "query": "Find human gene expression datasets about alpha particle radiation",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-175",
+        "OSD-73",
+        "OSD-92",
+        "OSD-56",
+        "OSD-283"
+      ],
+      "effective_filters": {
+        "organism": "Homo sapiens",
+        "tissue": null
+      },
+      "requirements": {
+        "post_return": false,
+        "gene_expression": true
+      },
+      "reviewed_relevant_ids": [
+        "OSD-175"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-137",
+        "OSD-915"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.206
+    },
+    {
+      "id": "post_return_liver_proteomics",
+      "query": "Find mouse liver proteomics datasets after returning to Earth",
+      "kind": "retrieval",
+      "returned_ids": [
+        "OSD-209"
+      ],
+      "effective_filters": {
+        "organism": "Mus musculus",
+        "tissue": "Liver"
+      },
+      "requirements": {
+        "post_return": true,
+        "gene_expression": false
+      },
+      "reviewed_relevant_ids": [
+        "OSD-209"
+      ],
+      "reviewed_incompatible_ids": [
+        "OSD-915"
+      ],
+      "known_positive_hit_at_5": true,
+      "known_positive_reciprocal_rank_at_5": 1.0,
+      "returned_incompatible_ids": [],
+      "passed": true,
+      "reason": "Reviewed-positive and exclusion checks passed.",
+      "seconds": 0.2
+    },
+    {
+      "id": "empty_question",
+      "query": "   ",
+      "kind": "input_handling",
+      "returned_ids": [],
+      "error": "Enter a research question.",
+      "passed": true,
+      "reason": "Expected clarification/error received.",
+      "seconds": 0.0
+    },
+    {
+      "id": "unsupported_negation",
+      "query": "Find mouse datasets excluding liver",
+      "kind": "input_handling",
+      "returned_ids": [],
+      "error": "Negated requirements are not supported yet. Use a positively worded question.",
+      "passed": true,
+      "reason": "Expected clarification/error received.",
+      "seconds": 0.0
+    },
+    {
+      "id": "multiple_organisms",
+      "query": "Find human and mouse liver datasets",
+      "kind": "input_handling",
+      "returned_ids": [],
+      "error": "Multiple organism values detected: Homo sapiens, Mus musculus. Choose one using the organism dropdown.",
+      "passed": true,
+      "reason": "Expected clarification/error received.",
+      "seconds": 0.054
+    },
+    {
+      "id": "multiple_tissues",
+      "query": "Find mouse liver and lung datasets",
+      "kind": "input_handling",
+      "returned_ids": [],
+      "error": "Multiple tissue values detected: Liver, Lung. Choose one using the tissue dropdown.",
+      "passed": true,
+      "reason": "Expected clarification/error received.",
+      "seconds": 0.045
+    }
+  ]
+}
